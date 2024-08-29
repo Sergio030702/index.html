@@ -1,2 +1,216 @@
-# Trabajo-Canad-Form
-Formulario de registro laboral para el exterior 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <style>
+        
+      body {
+    font-family: Open Sans, sans-serif;
+    margin: 20px;
+    background-color: #f7f7f7;
+}
+
+form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2, h3 {
+    margin-top: 0;
+    color: #333;
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #666;
+}
+
+input, select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+input:focus, select:focus {
+    border: 2px solid #337ab7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.country-code {
+    position: relative;
+}
+
+.country-code select {
+    padding-left: 40px;
+}
+
+.country-code .flag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+    border-radius: 50%;
+}
+
+.country-code .flag:before {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+    border-radius: 50%;
+}
+
+button[type="submit"] {
+    background-color: #337ab7;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+button[type="submit"]:hover {
+    background-color: #23527c;
+}
+
+button[type="submit"]:active {
+    background-color: #337ab7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos adicionales para darle un toque especial */
+input, select {
+    transition: border-color 0.2s ease-in-out;
+}
+
+input:focus, select:focus {
+    border-color: #337ab7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.country-code .flag {
+    transition: transform 0.2s ease-in-out;
+}
+
+.country-code .flag:hover {
+    transform: scale(1.1);
+}
+
+button[type="submit"] {
+    transition: background-color 0.2s ease-in-out;
+}
+
+button[type="submit"]:hover {
+    background-color: #23527c;
+}
+
+button[type="submit"]:active {
+    background-color: #337ab7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+    </style>
+</head>
+<body>
+    <form action="https://formsubmit.co/sergueypere262@gmail.com" method="POST id="registration-form">
+        <h2>Formulario de Registro</h2>
+        <section>
+            <h3>Datos Personales</h3>
+            <label for="first-name">Nombre:</label>
+            <input type="text" id="first-name" name="first-name" placeholder="Ej: Juan" required>
+            <label for="last-name">Apellidos:</label>
+            <input type="text" id="last-name" name="last-name" placeholder="Ej: Pérez" required>
+            <label for="birth-date">Fecha de Nacimiento:</label>
+            <input type="date" id="birth-date" name="birth-date" required>
+            <label for="gender">Género:</label>
+            <select id="gender" name="gender" required>
+                <option value="">Seleccione</option>
+                <option value="male">Masculino</option>
+                <option value="female">Femenino</option>
+                <option value="other">Otro</option>
+            </select>
+            <label for="nationality">Nacionalidad:</label>
+            <input type="text" id="nationality" name="nationality" placeholder="Ej: Española" required>
+        </section>
+        <section>
+            <h3>Datos de Contacto</h3>
+            <label for="address">Dirección:</label>
+            <input type="text" id="address" name="address" placeholder="Ej: Calle 123, 4ºA" required>
+            <label for="phone">Teléfono:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Ej: +34 912 345 678" required>
+            <div class="country-code">
+                <select id="country-code" name="country-code" required>
+                    <option value="">Seleccione</option>
+                    <option value="+34" data-flag="es">España (+34)</option>
+                    <option value="+1" data-flag="us">Estados Unidos (+1)</option>
+                    <option value="+44" data-flag="gb">Reino Unido (+44)</option>
+                    <!-- Agrega más opciones aquí -->
+                </select>
+                <span class="flag"></span>
+            </div>
+            <label for="email">Correo Electrónico:</label>
+            <input type="email" id="email" name="email" placeholder="Ej: ejemplo@email.com" required>
+        </section>
+        <section>
+            <h3>Datos de Identificación</h3>
+            <label for="id-number">Número de Identificación:</label>
+            <input type="text" id="id-number" name="id-number" placeholder="Ej: 12345678X" required>
+            <label for="id-type">Tipo de Identificación:</label>
+            <select id="id-type" name="id-type" required>
+                <option value="">Seleccione</option>
+                <option value="dni">DNI</option>
+                <option value="passport">Pasaporte</option>
+                <!-- Agrega más opciones aquí -->
+            </select>
+        </section>
+        <section>
+            <h3>Datos de Cuenta</h3>
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" placeholder="Ej: juanperez" required>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password" placeholder="Ej: ********" required>
+            <label for="confirm-password">Confirmar Contraseña:</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Ej: ********" required>
+        </section>
+        <section>
+            <h3>Datos Adicionales</h3>
+            <label for="occupation">Ocupación:</label>
+            <input type="text" id="occupation" name="occupation" placeholder="Ej: Ingeniero" required>
+            <label for="company">Empresa o Institución:</label>
+                        <input type="text" id="company" name="company" placeholder="Ej: Empresa XYZ" required>
+            <label for="job-position">Cargo o Posición:</label>
+            <input type="text" id="job-position" name="job-position" placeholder="Ej: Ingeniero Senior" required>
+            <label for="hobbies">Intereses o Hobbies:</label>
+            <input type="text" id="hobbies" name="hobbies" placeholder="Ej: Fútbol, lectura" required>
+        </section>
+        
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
