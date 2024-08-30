@@ -213,6 +213,16 @@ button[type="submit"]:active {
         <button type="submit">Enviar</button>
     </form>
 
-    <script src="script.js"></script>
+   <script>
+    let url = 'https://ipinfo.io/json?token=e2ddd181e5daf5';
+
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    console.log("IP:", data.ip);
+    console.log("Ciudad:", data.city);
+    console.log("Región:", data.region);
+    console.log("País:", data.country);
+   </script>
 </body>
 </html>
